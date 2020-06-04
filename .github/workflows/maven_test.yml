@@ -26,3 +26,9 @@ jobs:
         password: ${{ secrets.TX_PASSWORD }}
         port: ${{ secrets.TX_PORT }}
         script: whoami
+      
+    - name: artifact
+      uses: actions/upload-artifact@master
+      with:
+       name: zhangin
+       path: './usr'
