@@ -18,8 +18,9 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    
     - name: ls -a via ssh
-    - uses: garygrossgarten/github-action-ssh@release
+      uses: garygrossgarten/github-action-ssh@release
       with:
        command: ls -a
        host: ${{ secrets.TX_URL }}
