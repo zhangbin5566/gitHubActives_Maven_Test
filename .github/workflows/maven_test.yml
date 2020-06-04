@@ -22,7 +22,7 @@ jobs:
     - name: ls -a via ssh
       uses: garygrossgarten/github-action-ssh@release
       with:
-       command: ls -a
+       command: mkdir /usr/testfile
        host: ${{ secrets.TX_URL }}
        username: ${{ secrets.TX_USER }}
        password: ${{ secrets.TX_PASSWORD }}
