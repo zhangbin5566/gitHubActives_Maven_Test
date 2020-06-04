@@ -18,14 +18,14 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
+    - name: ls -a via ssh
+    - uses: garygrossgarten/github-action-ssh@release
       with:
-        host: ${{ secrets.TX_URL }}
-        username: ${{ secrets.TX_USER }}
-        password: ${{ secrets.TX_PASSWORD }}
-        port: ${{ secrets.TX_PORT }}
-        script: |
-         "echo 'Hello Github Actions' > actions.log" 
+       command: ls -a
+       host: ${{ secrets.TX_URL }}
+       username: ${{ secrets.TX_USER }}
+       password: ${{ secrets.TX_PASSWORD }}
+       port: ${{ secrets.TX_PORT }}
+
       
  
