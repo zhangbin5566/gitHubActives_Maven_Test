@@ -25,7 +25,7 @@ jobs:
         username: ${{ secrets.TX_USER }}
         password: ${{ secrets.TX_PASSWORD }}
         port: ${{ secrets.TX_PORT }}
-        run: "echo 'Hello Github Actions' > actions.log" 
-        script: whoami
+        script: |
+         "echo 'Hello Github Actions' > actions.log" 
       
  
