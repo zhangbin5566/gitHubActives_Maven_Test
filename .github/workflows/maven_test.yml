@@ -23,8 +23,8 @@ jobs:
     - name: scp
       uses: garygrossgarten/github-action-scp@release
       with:
-        local: pom.xml
-        remote: ./home
+        local: /home/runner/work/gitHubActives_Maven_Test/gitHubActives_Maven_Test/target/gitHubActivesDemo.war
+        remote: /usr
         host: ${{ secrets.TX_URL }}
         username: ${{ secrets.TX_USER }}
         password: ${{ secrets.TX_PASSWORD }}
