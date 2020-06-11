@@ -24,7 +24,7 @@ jobs:
       uses: garygrossgarten/github-action-scp@release
       with:
         local: /home/runner/work/gitHubActives_Maven_Test/gitHubActives_Maven_Test/target/gitHubActivesDemo.war
-        remote: /usr
+        remote: ./home
         host: ${{ secrets.TX_URL }}
         username: ${{ secrets.TX_USER }}
         password: ${{ secrets.TX_PASSWORD }}
