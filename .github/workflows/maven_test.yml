@@ -26,7 +26,7 @@ jobs:
         DEPLOY_KEY: ${{ secrets.TX_DEPLOY_KEY }}   
         ARGS: -avz --delete --exclude='*.pyc'   
         SERVER_PORT: '22'  
-        FOLDER: /home/runner/work/gitHubActives_Maven_Test/gitHubActives_Maven_Test/target/ 
+        FOLDER: /home/runner/work/gitHubActives_Maven_Test/gitHubActives_Maven_Test/target/
         SERVER_IP: ${{ secrets.TX_URL }}  
         USERNAME: ${{ secrets.TX_USER }}  
         SERVER_DESTINATION: /usr/local/localfiles/   
