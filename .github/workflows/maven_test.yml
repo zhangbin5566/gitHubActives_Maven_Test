@@ -20,14 +20,18 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: scp
-      uses: garygrossgarten/github-action-scp@release
-      with:
-        local: /home/runner/work/gitHubActives_Maven_Test/gitHubActives_Maven_Test/target/gitHubActivesDemo.war
-        remote: ./home
-        host: ${{ secrets.TX_URL }}
-        username: ${{ secrets.TX_USER }}
-        password: ${{ secrets.TX_PASSWORD }}
-        port: ${{ secrets.TX_PORT }}
+    - name: Deploy to Server  
+      uses: AEnterprise/rsync-deploy@v1.0  
+      env:
+        DEPLOY_KEY: ${{ secrets.TX_DEPLOY_KEY }}   
+        ARGS: -avz --delete --exclude='*.pyc'   
+        SERVER_PORT: '22'  
+        FOLDER: /home/runner/work/gitHubActives_Maven_Test/gitHubActives_Maven_Test/target/ 
+        SERVER_IP: ${{ secrets.TX_URL }}  
+        USERNAME: ${{ secrets.TX_USER }}  
+        SERVER_DESTINATION: /usr/local/localfiles/   
+
+  
+
       
  
