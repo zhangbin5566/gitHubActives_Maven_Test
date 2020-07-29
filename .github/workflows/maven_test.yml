@@ -24,7 +24,7 @@ jobs:
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.1.2
       env:
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+          SSH_PRIVATE_KEY: ${{ TX_DEPLOY_KEY }}
           ARGS: '-rltgoDzvO --delete'
           SOURCE: 'build/'
           REMOTE_HOST: ${{ secrets.TX_URL }}
