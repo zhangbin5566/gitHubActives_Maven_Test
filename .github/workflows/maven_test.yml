@@ -21,7 +21,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: Deploy to Server
+    - name: Deploy to Server1
       uses: easingthemes/ssh-deploy@v2.1.2
       env:
           SSH_PRIVATE_KEY: ${{ secrets.TX_DEPLOY_KEY }}
