@@ -30,7 +30,7 @@ jobs:
         SERVER_IP: ${{ secrets.TX_URL }}  
         USERNAME: ${{ secrets.TX_USER }}  
         SERVER_DESTINATION: /usr/local/git/
-    - name: Restart server   
+    - name: Restart5 server   
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.TX_URL}} 
