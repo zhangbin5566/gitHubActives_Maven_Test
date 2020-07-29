@@ -20,25 +20,15 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Deploy to Server  
-      uses: AEnterprise/rsync-deploy@v1.0  
+    - name: Install Dependencies
+      run: npm install
       env:
-        DEPLOY_KEY: ${{ secrets.TX_DEPLOY_KEY }}   
-        ARGS: -avz --delete --exclude='*.pyc'   
-        SERVER_PORT: '22'  
-        FOLDER: pom.xml
-        SERVER_IP: ${{ secrets.TX_URL }}  
-        USERNAME: ${{ secrets.TX_USER }}  
-        SERVER_DESTINATION: /usr/local/git/
-    - name: Restart5 server   
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.TX_URL}} 
-        username: ${{ secrets.TX_USER }}
-        key: ${{ secrets.TX_DEPLOY_KEY }}
-        script: |
-          cd /home/
-          ls
+          CI: true
+
+    - name: Build Project
+      run: npm run build
+      env:
+          CI: true
   
 
       
