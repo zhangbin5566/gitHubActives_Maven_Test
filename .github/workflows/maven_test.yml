@@ -26,7 +26,7 @@ jobs:
       env:
           SSH_PRIVATE_KEY: ${{ secrets.TX_DEPLOY_KEY }}
           ARGS: '-rltgoDzvO --delete'
-          SOURCE: 'build/'
+          SOURCE: '/home/runner/work/gitHubActives_Maven_Test/gitHubActives_Maven_Test/target/gitHubActivesDemo.war'
           REMOTE_HOST: ${{ secrets.TX_URL }}
           REMOTE_USER: ${{ secrets.TX_USER }}
           TARGET: '/usr'
