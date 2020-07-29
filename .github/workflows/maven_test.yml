@@ -18,17 +18,13 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+    # - name: Build with Maven
+    #  run: mvn -B package --file pom.xml
     - name: Install Dependencies
       run: npm install
       env:
           CI: true
 
-    - name: Build Project
-      run: npm run build
-      env:
-          CI: true
   
 
       
